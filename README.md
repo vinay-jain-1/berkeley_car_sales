@@ -68,6 +68,8 @@ Data preparation and analysis resulted in the following feature engineering summ
 | Linear Regression | 2.711907e+07     | 5207.597766     | <font color="green">0.826709</font> |
 | Ridge Regression  | 2.719740e+07     | 5215.112490     | 0.826208        |
 
+#### Linear Regression model provided the final best outcome. 
+However, Ridge was not far behind and it was so close that with some variation of data, Ridge could very well just be a tad bit ahead.
 
 #### Importance of features along with their top 3 values (for categorical columns) are as follows:
 
@@ -87,3 +89,26 @@ Data preparation and analysis resulted in the following feature engineering summ
 | transmission      |   1,422           | other         | manual       | automatic    |
 | paint_color       |    594           | purple        | brown        | green        |
 | model             |    0.520          | --            | --            | --            |
+
+
+# Recommendations for the used car dealership
+
+### Here are the key features that drive the price of the car (listed in the descending order of ranking):
+
+1. **Age along with Odometer reading**: This combined feature holds the highest importance. It suggests a complex relationship between age and mileage impacting car prices. For instance, high mileage might be less detrimental on a 15-year-old car compared to a 2-year-old car. Consider developing models that capture this interaction effect for better price prediction.
+2. **Odometer reading**: As expected, odometer reading is a significant factor influencing car prices. Customers generally prefer cars with lower mileage, indicating less wear and tear. Focus on capturing accurate odometer readings and potentially consider its interaction with age.
+3. **Year (age)**: While not as crucial as odometer reading, the car's age remains a significant factor. Newer cars generally command higher prices due to perceived better condition and updated features. Account for the year of manufacture in your pricing models.
+4. **Manufacturer**: Brand reputation plays a substantial role, particularly for prestigious names like Aston Martin, Ferrari, and Tesla (ranked 1st, 2nd, and 3rd respectively). These brands often signify luxury, performance, and cutting-edge technology, commanding premium prices. Categorize and analyze car prices based on manufacturer reputation and brand value.
+5. **Cylinders**:  The number of cylinders is a differentiating factor, especially for non-standard configurations like 12, 3, and 8 cylinders (ranked 1st, 2nd, and 3rd respectively). These often represent high-performance or fuel-efficient engines, which can significantly impact price. Consider engine specifications and cylinder count in your pricing models. 
+6. **Fuel Type**:  The type of fuel the car uses (diesel, electric, hybrid - ranked 1st, 2nd, and 3rd) plays a role in determining price.  Consider incorporating fuel type and its associated costs (e.g., fuel efficiency, charging infrastructure) into your pricing models.
+7. **Region**: The region where the car is located has an impact on its price. The top 3 regions impacting price are southwest MS, southwest VA, and Gainesville (ranked 1st, 2nd, and 3rd). Consider regional factors such as demand, supply, and cost of living when assessing car prices.
+8. **State**: Similar to region, the state where the car is located can influence its price due to varying regulations, taxes, and market conditions.  The top 3 states are LA, AR, and OH (ranked 1st, 2nd, and 3rd). Account for state-specific factors in your pricing analysis. 
+9. **Title Status**: The car's title status (lien, clean, missing - ranked 1st, 2nd, and 3rd) is important for determining its value and legal standing. Ensure accurate title information is available and factored into pricing decisions.
+10. **Type**: The type of vehicle (offroad, bus, truck - ranked 1st, 2nd, and 3rd) significantly affects its price. Different vehicle types cater to different needs and preferences, leading to varying price points.  Clearly categorize and analyze prices based on vehicle type.
+11. **Condition**: The car's condition (fair, salvage, new - ranked 1st, 2nd, and 3rd) is a crucial factor influencing its price.  Customers are willing to pay more for cars in better condition. Accurately assess and represent the car's condition in pricing models.
+12. **Transmission**: The type of transmission (other, manual, automatic - ranked 1st, 2nd, and 3rd) can impact the car's desirability and price.  Consider the preferences of your target market and the availability of different transmission types.
+13. **Paint Color**: While having a lower importance, paint color can still influence a car's price. The top 3 colors are purple, brown, and green (ranked 1st, 2nd, and 3rd). Certain colors may be more popular or desirable than others, leading to price variations.
+14. **Model**:  The specific model of the car within a manufacturer's lineup can significantly influence its price due to varying features, performance, and demand. Account for model-specific attributes in your pricing analysis. 
+
+
+Hope this helps the used car dealership in determining what factors to consider for maintaing inventory of used cars.   
