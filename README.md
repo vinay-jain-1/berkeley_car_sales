@@ -105,7 +105,7 @@ However, Ridge was not far behind and it was so close that with some variation o
 
 # Recommendations for the used car dealership
 
-## Here are the key features that drive the price of the car (listed in the descending order of ranking):
+## Here are the key features that drive the price of the car listed in the order of ranking (rank 1 is listed first):
 
 1. **Age along with Odometer reading**: This combined feature holds the highest importance. It suggests a complex relationship between age and mileage impacting car prices. For instance, high mileage might be less detrimental on a 15-year-old car compared to a 2-year-old car. Consider developing models that capture this interaction effect for better price prediction.
 2. **Odometer reading**: As expected, odometer reading is a significant factor influencing car prices. Customers generally prefer cars with lower mileage, indicating less wear and tear. Focus on capturing accurate odometer readings and potentially consider its interaction with age.
