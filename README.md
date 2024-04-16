@@ -49,7 +49,13 @@ Data preparation and analysis resulted in the following feature engineering summ
 ### Summary of findings
 
 ### Column transformer pipelines setup
+Columns were transformed as follows:
+**OneHot Encoded columns**: 'manufacturer', 'condition', 'cylinders', 'fuel', 'title_status', 'transmission', 'type', 'paint_color', 'state', 'region'
+**Numerical columns with Polynomial degree of 6 and scaling:** 'age', 'odometer'
+**Numerical columns with Polynomial degree of 4 and scaling**: age_x_odo
+**Target encoding**:'model'
 
+![ColumnTransformer](https://github.com/vinay-jain-1/berkeley_car_sales/raw/main/images/ColumnTransformer.png)
 
 #### The model definition and execution was successfully completed. Following are the outcomes:
 1. I believe I met the key business ask. I was able to successfully identify the importance of various features in identifying the price of a used car. Details about the key findings are in the next section.
