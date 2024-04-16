@@ -83,7 +83,7 @@ Columns were transformed as follows:
 ## Linear Regression model provided the final best outcome. 
 However, Ridge was not far behind and it was so close that with some variation of data, Ridge could very well just be a tad bit ahead.
 
-#### Importance of features along with their top 3 values (for categorical columns) are as follows:
+# Importance of features along with their top 3 values (for categorical columns) are as follows:
 
 | Feature           | Highest Importance | Rank 1 value | Rank 2 value | Rank 3 value |
 |-------------------|:-------------------:|:-------------:|:-------------:|:-------------:|
@@ -105,7 +105,7 @@ However, Ridge was not far behind and it was so close that with some variation o
 
 # Recommendations for the used car dealership
 
-### Here are the key features that drive the price of the car (listed in the descending order of ranking):
+## Here are the key features that drive the price of the car (listed in the descending order of ranking):
 
 1. **Age along with Odometer reading**: This combined feature holds the highest importance. It suggests a complex relationship between age and mileage impacting car prices. For instance, high mileage might be less detrimental on a 15-year-old car compared to a 2-year-old car. Consider developing models that capture this interaction effect for better price prediction.
 2. **Odometer reading**: As expected, odometer reading is a significant factor influencing car prices. Customers generally prefer cars with lower mileage, indicating less wear and tear. Focus on capturing accurate odometer readings and potentially consider its interaction with age.
@@ -126,4 +126,4 @@ However, Ridge was not far behind and it was so close that with some variation o
 Hope this helps the used car dealership in determining what factors to consider for maintaing inventory of used cars.   
 
 # Next steps recommendation
-The R² value of 0.83 is pretty good. However, it will good to identify what else can we do to further improve that number (and reduce RMSE/MSE). One such area that I feel we can look at exploring is the interaction relationship between features. This could further help in explaining the factors that dictate the pricing. Interaction between Manufacturer and State features could be one such area to explore.  
+The R² value of 0.83 is pretty good. However, it will good to identify what else can we do to further improve that number (and reduce RMSE/MSE). One such area that I feel we can look at exploring is the interaction relationship between features. This could further help in explaining the factors that dictate the pricing. Interaction between Manufacturer and State features could be one such area to explore.
