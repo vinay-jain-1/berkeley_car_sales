@@ -48,6 +48,9 @@ Data preparation and analysis resulted in the following feature engineering summ
 
 ### Summary of findings
 
+### Column transformer pipelines setup
+
+
 #### The model definition and execution was successfully completed. Following are the outcomes:
 1. I believe I met the key business ask. I was able to successfully identify the importance of various features in identifying the price of a used car. Details about the key findings are in the next section.
 2. The quality of the model was defined using a few metrics: R², RMSE and MSE.
@@ -112,3 +115,6 @@ However, Ridge was not far behind and it was so close that with some variation o
 
 
 Hope this helps the used car dealership in determining what factors to consider for maintaing inventory of used cars.   
+
+# Next steps recommendation
+The R² value of 0.83 is pretty good. However, it will good to identify what else can we do to further improve that number (and reduce RMSE/MSE). One such area that I feel we can look at exploring is the interaction relationship between features. This could further help in explaining the factors that dictate the pricing. Interaction between Manufacturer and State features could be one such area to explore.  
