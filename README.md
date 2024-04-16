@@ -77,6 +77,7 @@ Columns were transformed as follows:
 | Linear Regression | 2.711907e+07     | 5207.597766     | <font color="green">0.826709</font> |
 | Ridge Regression  | 2.719740e+07     | 5215.112490     | 0.826208        |
 
+![Model Comparison](https://github.com/vinay-jain-1/berkeley_car_sales/raw/main/images/model_comparison.png)
 
 
 ## Linear Regression model provided the final best outcome. 
