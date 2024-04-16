@@ -34,8 +34,8 @@ Data preparation and analysis resulted in the following feature engineering summ
 
 | Feature | Transformation | Rationale |
 |----------|----------|----------|
-| age (derived from year)   | Standardization + Polynomial Features (degree 2 or 3) + Regularization    | Handles non-linear relationship between age and price, prevents overfitting.   |
-| odometer    | Standardization + Polynomial Features (degree 2 or 3)    | Addresses scaling and potential non-linearity of mileage.    |
+| age (derived from year)   | Polynomial Features (degree 6) + Standardization + Regularization    | Handles non-linear relationship between age and price, prevents overfitting.   |
+| odometer    | Polynomial Features (degree 4) + Standardization  | Addresses scaling and potential non-linearity of mileage.    |
 | age_x_odo (interaction_only term derived feature from age and odometer)    | Standardization + Polynomial Features (degree 5)   | Captures the interaction effect of age and mileage on price. |
 | model    | Target Encoding + Regularization    | Captures model's impact on price while considering potential overfitting and data imbalance.    |
 | All other categorical features    | One-hot encoding    | Represents distinct transmission types effectively and aligns with other categorical encodings.|
