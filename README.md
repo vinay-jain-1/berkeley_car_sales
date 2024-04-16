@@ -8,14 +8,14 @@ The goal is to understand what factors make a used car more or less expensive.  
 # Link to Jupyter notebook:
  https://github.com/vinay-jain-1/berkeley_car_sales/blob/main/prompt_II.ipynb
 
-# Approach:
-### CRISP approach
+
+# CRISP approach
 CRISP DM framework was used to approach how this exercise should be conducted. 
 
-### Business understanding
+# Business understanding
 Business understanding was gained by reviewing the raw data and problem statement. Documented all the various sections as defined in the CRISP manual (https://github.com/vinay-jain-1/berkeley_car_sales/blob/main/docs/crisp-dm-manual.pdf). 
 
-### Data understanding
+# Data understanding
 The data was then analyzed to get a good understanding of what is available. The following steps were followed to analyze the data:
 1. Read CSV data into a Dataframe.
 2. Understand all the columns involved, how many are non-null, which ones are categorical or numerical.
@@ -25,7 +25,7 @@ The data was then analyzed to get a good understanding of what is available. The
 These steps resulted in identifying the upper and lower fence values to use for numerical values. 
 State and Region values seemed to exhibit similar outcome. So if modeling constraints dictated dropping one of them, we could choose to do so.
 
-### Data Preparation
+# Data Preparation
 Once the data analysis was completed, data preparation steps were taken to identify how each of the categorical values should be encoded and if any new derived attributes should be created. The following attributes were created anew as part of this:
 1. Age (derived from year)
 2. age x odo (derived as a product of age and odometer reading).
@@ -40,15 +40,15 @@ Data preparation and analysis resulted in the following feature engineering summ
 | model    | Target Encoding + Regularization    | Captures model's impact on price while considering potential overfitting and data imbalance.    |
 | All other categorical features    | One-hot encoding    | Represents distinct transmission types effectively and aligns with other categorical encodings.|
 
-### Modeling
+# Modeling
 **Implementation Steps:**
 - Define column transformer pipelines
 - Prepare data: Split the data into development and testing sets.
 - Model Training and Evaluation: Train and compare different models with the engineered features using cross-validation.
 
-### Summary of findings
+## Summary of findings
 
-### Column transformer pipelines setup
+## Column transformer pipelines setup
 Columns were transformed as follows:
 **OneHot Encoded columns**: 'manufacturer', 'condition', 'cylinders', 'fuel', 'title_status', 'transmission', 'type', 'paint_color', 'state', 'region'
 **Numerical columns with Polynomial degree of 6 and scaling:** 'age', 'odometer'
@@ -57,7 +57,7 @@ Columns were transformed as follows:
 
 ![ColumnTransformer](https://github.com/vinay-jain-1/berkeley_car_sales/raw/main/images/ColumnTransformer.png)
 
-#### The model definition and execution was successfully completed. Following are the outcomes:
+## The model definition and execution was successfully completed. Following are the outcomes:
 1. I believe I met the key business ask. I was able to successfully identify the importance of various features in identifying the price of a used car. Details about the key findings are in the next section.
 2. The quality of the model was defined using a few metrics: R², RMSE and MSE.
     - **R² score: 0.83**: An R² value of 0.83 for predicting the price of used cars is generally considered a very good score. It indicates that my model explains 83% of the variance in car prices, which is a strong performance for this type of problem.
@@ -70,14 +70,16 @@ Columns were transformed as follows:
     - **Linear Regression model** did slightly better than Ridge based model (with winning alpha of 0.01). Linear had RMSE of 5207.597766, whereas Ridge had RMSE of 5215.112490.
     - Here is how the two models did (Model Performance Comparison):
 
-#### Model Performance Comparison
+## Model Performance Comparison
 
 | Model             | Test MSE          | Test RMSE        | Test R²         |
 |-------------------|:-----------------:|:-----------------:|:----------------:|
 | Linear Regression | 2.711907e+07     | 5207.597766     | <font color="green">0.826709</font> |
 | Ridge Regression  | 2.719740e+07     | 5215.112490     | 0.826208        |
 
-#### Linear Regression model provided the final best outcome. 
+
+
+## Linear Regression model provided the final best outcome. 
 However, Ridge was not far behind and it was so close that with some variation of data, Ridge could very well just be a tad bit ahead.
 
 #### Importance of features along with their top 3 values (for categorical columns) are as follows:
