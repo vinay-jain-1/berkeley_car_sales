@@ -9,8 +9,8 @@ The goal is to understand what factors make a used car more or less expensive.  
  https://github.com/vinay-jain-1/berkeley_car_sales/blob/main/prompt_II.ipynb
 
 
-# CRISP approach
-CRISP DM framework was used to approach how this exercise should be conducted. 
+# CRISP-DM approach
+CRISP-DM framework was used to approach how this exercise should be conducted. 
 
 # Business understanding
 Business understanding was gained by reviewing the raw data and problem statement. Documented all the various sections as defined in the CRISP manual (https://github.com/vinay-jain-1/berkeley_car_sales/blob/main/docs/crisp-dm-manual.pdf). 
@@ -22,8 +22,15 @@ The data was then analyzed to get a good understanding of what is available. The
 3. For categorical columns, identify if any of them contain a large number of unique values. Those columns will special consideration when defining a model.
 4. For numerical values, identify what kind of outliers exist and what values should be considered for modeling.
 
-These steps resulted in identifying the upper and lower fence values to use for numerical values. 
-State and Region values seemed to exhibit similar outcome. So if modeling constraints dictated dropping one of them, we could choose to do so.
+Once all the data attributes were analyzed, the following observations were recorded.
+### Data description observations summary:
+
+1. Drop the ```id``` and ```VIN``` columns since they are meant to ID each vehicle and not useful for our analysis.
+2. Retain most of the categorical attibutes (except ```size``` since it has a low count of non-null values).
+3. Use the lower and upper fence values for numerical columns as calculated above.
+4. Some of the non-integer attributes have quite a few unique values ('state' and 'manufacturer' for example). This could lead to a large explosion of width of data when techniques like one-hot encoder are applied.
+5. Considering that 'model' attribute has thousands of unique values, it may be best to model it as a TargetEncoder instead of OneHotEncoder.
+6. Update: Iterative development analysis showed that dropping ```drive``` helped improve the R^2 metric.
 
 # Data Preparation
 Once the data analysis was completed, data preparation steps were taken to identify how each of the categorical values should be encoded and if any new derived attributes should be created. The following attributes were created anew as part of this:
@@ -65,8 +72,8 @@ Columns were transformed as follows:
             - the features: 'year', 'manufacturer', 'model', 'condition', 'cylinders', 'fuel', 'odometer', 'title_status', 'transmission', 'type', 'paint_color', 'state', 'region', and the age-odometer interaction AND
             - the target variable 'price'.
         - It implies that the feature engineering efforts and model selection were effective in representing the factors that influence used car prices.
-    - **RMSE=5207.59**: Considering that the used car prices were in the range of $0 (minimum) to $57K (max) -- after taking out the outliers, an RMSE of 5207 would indicate the predictions are within $5.2K of the actual prices. So while its not particularly bad, the model has room for improvement.
-    - **MSE=2.711907e+07**: Similar considerations as RMSE.
+    - **RMSE=5207.59**: Considering that the used car prices were in the range of $0 (minimum) to $57K (max) -- after taking out the outliers, an RMSE of 5207 would indicate the predictions are within $5.2K of the actual prices (since RMSE is in the same units as the target variable- price). So while its not particularly bad, the model has room for improvement.
+    - **MSE=2.711907e+07**: Similar considerations as RMSE but with a more heavier penalty for larger errors as it is a squared value metric. 
     - **Linear Regression model** did slightly better than Ridge based model (with winning alpha of 0.01). Linear had RMSE of 5207.597766, whereas Ridge had RMSE of 5215.112490.
     - Here is how the two models did (Model Performance Comparison):
 
