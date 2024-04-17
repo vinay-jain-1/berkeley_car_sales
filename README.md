@@ -56,10 +56,10 @@ Data preparation and analysis resulted in the following feature engineering summ
 
 ## Column transformer pipelines setup
 Columns were transformed as follows:
-**OneHot Encoded columns**: 'manufacturer', 'condition', 'cylinders', 'fuel', 'title_status', 'transmission', 'type', 'paint_color', 'state', 'region'
-**Numerical columns with Polynomial degree of 6 and scaling:** 'age', 'odometer'
-**Numerical columns with Polynomial degree of 4 and scaling**: age_x_odo
-**Target encoding**:'model'
+- **OneHot Encoded columns**: 'manufacturer', 'condition', 'cylinders', 'fuel', 'title_status', 'transmission', 'type', 'paint_color', 'state', 'region'
+- **Numerical columns with Polynomial degree of 6 and scaling:** 'age', 'odometer'
+- **Numerical columns with Polynomial degree of 4 and scaling**: age_x_odo
+- **Target encoding**:'model'
 
 ![ColumnTransformer](https://github.com/vinay-jain-1/berkeley_car_sales/raw/main/images/ColumnTransformer.png)
 
