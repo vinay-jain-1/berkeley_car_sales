@@ -52,16 +52,17 @@ Data preparation and analysis resulted in the following feature engineering summ
 - Prepare data: Split the data into development and testing sets.
 - Model Training and Evaluation: Train and compare different models with the engineered features using cross-validation.
 
-## Summary of findings
-
 ## Column transformer pipelines setup
 Columns were transformed as follows:
 - **OneHot Encoded columns**: 'manufacturer', 'condition', 'cylinders', 'fuel', 'title_status', 'transmission', 'type', 'paint_color', 'state', 'region'
-- **Numerical columns with Polynomial degree of 6 and scaling:** 'age', 'odometer'
-- **Numerical columns with Polynomial degree of 4 and scaling**: age_x_odo
+- **Numerical columns with Polynomial degree of 6 and standardized:** 'age', 'odometer'
+- **Numerical columns with Polynomial degree of 4 and standardized**: age_x_odo
 - **Target encoding**:'model'
 
 ![ColumnTransformer](https://github.com/vinay-jain-1/berkeley_car_sales/raw/main/images/ColumnTransformer.png)
+
+## Model execution
+- The model was executed using Linear regression and with Ridge regression with different values of alpha (0.05, 0.1, and 0.2). A cross validation was conducted using KFold with numnber of folds set to 5. GridSearchCV was used to execute different models. Results were compared using R², RMSE and MSE metrics. Finally importance of each of the features were derived to compile the recommendations for the used car dealership.
 
 ## The model definition and execution was successfully completed. Following are the outcomes:
 1. I believe I met the key business ask. I was able to successfully identify the importance of various features in identifying the price of a used car. Details about the key findings are in the next section.
