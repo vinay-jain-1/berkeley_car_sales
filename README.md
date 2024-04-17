@@ -1,4 +1,4 @@
-UC Berkeley - Professional Data Science and Machine Learning - Assignment 10
+UC Berkeley - Professional Data Science and Machine Learning - Assignment 11.1
 
 
 # Goal of this exercise:
@@ -67,7 +67,7 @@ Columns were transformed as follows:
 1. I believe I met the key business ask. I was able to successfully identify the importance of various features in identifying the price of a used car. Details about the key findings are in the next section.
 2. The quality of the model was defined using a few metrics: R², RMSE and MSE.
     - **R² score: 0.83**: An R² value of 0.83 for predicting the price of used cars is generally considered a very good score. It indicates that my model explains 83% of the variance in car prices, which is a strong performance for this type of problem.
-        - The high R² suggests that your model has successfully captured the relationships between:
+        - The high R² suggests that the model has successfully captured the relationships between:
             - the features: 'year', 'manufacturer', 'model', 'condition', 'cylinders', 'fuel', 'odometer', 'title_status', 'transmission', 'type', 'paint_color', 'state', 'region', and the age-odometer interaction AND
             - the target variable 'price'.
         - It implies that the feature engineering efforts and model selection were effective in representing the factors that influence used car prices.
@@ -81,7 +81,7 @@ Columns were transformed as follows:
 | Model             | Test MSE          | Test RMSE        | Test R²         |
 |-------------------|:-----------------:|:-----------------:|:----------------:|
 | Linear Regression | 2.711907e+07     | 5207.597766     | <font color="green">0.826709</font> |
-| Ridge Regression  | 2.719740e+07     | 5215.112490     | 0.826208        |
+| Ridge Regression (best alpha = 0.05) | 2.719740e+07     | 5215.112490     | 0.826208        |
 
 ![Model Comparison](https://github.com/vinay-jain-1/berkeley_car_sales/raw/main/images/model_comparison.png)
 
