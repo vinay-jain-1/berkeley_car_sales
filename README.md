@@ -132,5 +132,5 @@ However, Ridge was not far behind and it was so close that with some variation o
 
 Hope this helps the used car dealership in determining what factors to consider for maintaing inventory of used cars.   
 
-# Next steps recommendation
+# Next steps (improvements) recommendation for the project
 The R² value of 0.83 is pretty good. However, it will good to identify what else can we do to further improve that number (and reduce RMSE/MSE). One such area that I feel we can look at exploring is the interaction relationship between features- just like there was an interaction identified between age and odometer. This could further help in explaining the factors that dictate the pricing. Interaction between Manufacturer and State features could be one such area to explore.
